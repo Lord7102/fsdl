@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Product Gallery</h2>
+
+<div id="products"></div>
+
+<script>
+// JSON Data
+var data = [
+  {name: "Laptop", price: 50000},
+  {name: "Mobile", price: 20000},
+  {name: "Headphones", price: 2000}
+];
+
+// Display products
+var output = "";
+for (var i = 0; i < data.length; i++) {
+  output += "<div border='1'>"
+          + "<p>" + data[i].name + "</p>"
+          + "<p>₹" + data[i].price + "</p>"
+          + "<button onclick='buy(\"" + data[i].name + "\")'>Buy Now</button>"
+          + "<hr></div>";
+}
+
+document.getElementById("products").innerHTML = output;
+
+// Buy function
+function buy(name) {
+  alert(name + " Purchased!");
+}
+</script>
+
+</body>
+</html>

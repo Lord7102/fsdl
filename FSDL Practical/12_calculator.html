@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            font-family:Arial;
+            text-align:center; 
+        }
+        .cart{
+            border:1px solid black;
+            width:250px;
+            padding:20px;
+            margin:10px auto;
+        }
+        button{
+            padding:5px 10px;
+            font-size:15px;
+        }
+        .controls{
+            margin:10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <input type="number" id="num1" placeholder="Enter First Number">
+    <input type="number" id="num2" placeholder="Enter second Number">
+    <br><br>
+
+    <button onclick="add()">Add</button>
+    <button onclick="subtract()">Subtract</button>
+    <button onclick="multiply()">Multiply</button>
+    <button onclick="divide()">Divide</button>
+
+    <h3>Result: <span id="result">0</span></h3>
+
+    <script>
+        function getvalues(){
+            let num1=parseFloat(document.getElementById("num1").value);
+            let num2=parseFloat(document.getElementById("num2").value);
+            return [num1,num2];
+        }
+        function add(){
+            let [a,b]=getvalues();
+            document.getElementById("result").innerText=a+b;
+        }
+        function subtract(){
+            let [a,b]=getvalues();
+            document.getElementById("result").innerText=a-b;
+        }
+        function multiply(){
+            let [a,b]=getvalues();
+            document.getElementById("result").innerText=a*b;
+        }
+        function divide(){
+            let [a,b]=getvalues();
+            document.getElementById("result").innerText=a/b;
+        }                                   
+
+    </script>
+    
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Calculator</h3>
+
+<input type="number" id="a">
+<input type="number" id="b">
+
+<br><br>
+
+<button onclick="calc('+')">+</button>
+<button onclick="calc('-')">-</button>
+<button onclick="calc('*')">*</button>
+<button onclick="calc('/')">/</button>
+
+<p>Result: <span id="res"></span></p>
+
+<script>
+function calc(op) {
+  var x = Number(document.getElementById("a").value);
+  var y = Number(document.getElementById("b").value);
+  var r;
+
+  if (op == '+') r = x + y;
+  else if (op == '-') r = x - y;
+  else if (op == '*') r = x * y;
+  else if (op == '/') r = x / y;
+
+  document.getElementById("res").innerText = r;
+}
+</script>
+
+</body>
+</html>

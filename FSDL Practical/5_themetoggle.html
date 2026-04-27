@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Toggle Theme</h1>
+    <button onclick="f()">Toggle Theme</button>
+    <script>
+        function f(){
+            let t=localStorage.getItem("toggle");
+            if(t=="true"){
+                localStorage.setItem("toggle","false");
+                document.body.style.backgroundColor="white";
+            }
+            else{
+                localStorage.setItem("toggle","true");
+                document.body.style.backgroundColor="black";
+            }
+        }
+    </script>
+    
+</body>
+</html>

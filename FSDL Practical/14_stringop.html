@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Operations</title>
+</head>
+<body>
+    <h1>String Operations</h1>
+    <input type="text" placeholder="Enter Text" id="text">
+     <br><br>
+     <button onclick="reverse()">Reverse</button>
+     <button onclick="upper()">Uppercase</button>
+     <button onclick="lower()">Lowercase</button>
+     <button onclick="lengthStr()">Length</button>
+
+     <h4>Result : <span id="result"></span></h4> 
+     <script>
+        function getText(){
+            return document.getElementById("text").value;
+        }
+        function reverse(){
+            let str = getText();
+           document.getElementById("result").innerText=str.split("").reverse().join("");
+        }
+        function upper(){
+            let str=getText();
+            document.getElementById("result").innerText = str.toUpperCase();
+        }
+        function lower(){
+            let str=getText();
+           document.getElementById("result").innerText = str.toLowerCase();
+        }
+        function lengthStr(){
+            let str=getText();
+            document.getElementById("result").innerText=str.length;
+        }
+     </script>
+</body>
+</html>

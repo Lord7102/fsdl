@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2 id="t">0:0</h2>
+
+<button onclick="start()">Start</button>
+<button onclick="stop()">Stop</button>
+<button onclick="reset()">Reset</button>
+
+<script>
+let m = 0;
+let sec = 0;
+let x;
+
+function start() {
+  x = setInterval(function(){
+    sec++;
+
+    if(sec == 60){
+      m++;
+      sec = 0;
+    }
+
+    document.getElementById("t").innerText = m + ":" + sec;
+  },1000);
+}
+
+function stop() {
+  clearInterval(x);
+}
+
+function reset() {
+  m = 0;
+  sec = 0;
+  document.getElementById("t").innerText = "0:0";
+}
+</script>
+
+</body>
+</html>

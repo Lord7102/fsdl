@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Product Filter</h3>
+
+<select onchange="filter()" id="cat">
+  <option value="all">All</option>
+  <option value="electronics">Electronics</option>
+  <option value="clothes">Clothes</option>
+</select>
+
+<div class="item" data-cat="electronics">Laptop</div>
+<div class="item" data-cat="electronics">Mobile</div>
+<div class="item" data-cat="clothes">Shirt</div>
+<div class="item" data-cat="clothes">Jeans</div>
+
+<script>
+function filter() {
+  var c = document.getElementById("cat").value;
+  var items = document.getElementsByClassName("item");
+
+  for (var i = 0; i < items.length; i++) {
+    if (c === "all" || items[i].dataset.cat === c) {
+      items[i].style.display = "block";
+    } else {
+      items[i].style.display = "none";
+    }
+  }
+}
+</script>
+
+</body>
+</html>

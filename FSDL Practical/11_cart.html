@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family:Arial;
+            text-align:center;
+        }
+        .cart{
+            border:1px solid black;
+            width:250px;
+            padding:20px;
+            margin:10px auto;
+        }
+        button{
+            padding:5px 10px;
+            font-size:20px;
+        }
+        .controls{
+            margin:10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Shopping Cart</h1>
+    <div class="cart">
+        <div class="item">
+            <p>Product - T-shirt</p>
+            <p>Price : Rs <span class="price">500</span></p>
+            <div class="controls">
+                <button onclick="decrease()">-</button>
+                <span id="quantity">1</span>
+                <button onclick="increase()">+</button>
+            </div>
+            <h3>Total : Rs <span id="Total">500</span></h3>
+        </div>
+    </div>
+    <script>
+        let quantity = 1;
+        let price = 500;
+        function increase(){
+            quantity++;
+            document.getElementById("quantity").innerText = quantity;
+            document.getElementById("Total").innerText = quantity * price;
+        }
+        function decrease(){
+            if(quantity > 1){
+                quantity--;
+                document.getElementById("quantity").innerText = quantity;
+                document.getElementById("Total").innerText = quantity * price;
+            }
+        }
+    </script>
+    
+</body>
+</html>

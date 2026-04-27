@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>FAQ</h1>
+    <p onclick="f(this)">What is HTML?</p>
+    <div style="display:none">HTML is a markup language.</div>
+
+    <p onclick="f(this)">What is CSS?</p>
+    <div style="display:none">CSS is used for styling.</div>
+
+    <script>
+        function f(e) {
+            e.nextElementSibling.style.display = "block";
+        }
+    </script>
+</body>
+
+</html>

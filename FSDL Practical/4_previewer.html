@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h3>Enter Details</h3>
+
+    Name: <input type="text" onkeyup="update()" id="name"><br><br>
+    Email: <input type="text" onkeyup="update()" id="email"><br><br>
+
+    <hr>
+
+    <h3>Profile Preview</h3>
+
+    <p>Name: <span id="pname"></span></p>
+    <p>Email: <span id="pemail"></span></p>
+
+    <script>
+        function update() {
+            document.getElementById("pname").innerText =
+                document.getElementById("name").value;
+
+            document.getElementById("pemail").innerText =
+                document.getElementById("email").value;
+        }
+    </script>
+
+</body>
+
+</html>

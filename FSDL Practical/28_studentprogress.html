@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Performance</title>
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<h2>Student Performance Dashboard</h2>
+
+<!-- Charts -->
+<canvas id="barChart" width="400" height="200"></canvas>
+<br>
+<canvas id="lineChart" width="400" height="200"></canvas>
+<br>
+<canvas id="pieChart" width="400" height="200"></canvas>
+
+<script>
+    // Student Data
+    const subjects = ['Math', 'OS', 'DBMS', 'CN'];
+    const marks = [80, 70, 75, 85];
+
+    const attendance = [90, 85, 88, 92];
+
+    // Bar Chart (Marks)
+    new Chart(document.getElementById('barChart'), {
+        type: 'bar',
+        data: {
+            labels: subjects,
+            datasets: [{
+                label: 'Marks',
+                data: marks
+            }]
+        }
+    });
+
+    // Line Chart (Attendance)
+    new Chart(document.getElementById('lineChart'), {
+        type: 'line',
+        data: {
+            labels: subjects,
+            datasets: [{
+                label: 'Attendance %',
+                data: attendance
+            }]
+        }
+    });
+
+    // Pie Chart (Progress Distribution)
+    new Chart(document.getElementById('pieChart'), {
+        type: 'pie',
+        data: {
+            labels: ['Completed', 'Remaining'],
+            datasets: [{
+                data: [75, 25]
+            }]
+        }
+    });
+</script>
+
+</body>
+
+</html>

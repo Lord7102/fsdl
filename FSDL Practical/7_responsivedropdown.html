@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { margin: 0; font-family: Arial; }
+
+.nav {
+  background: black;
+  padding: 10px;
+}
+
+.nav a {
+  color: white;
+  margin: 10px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Dropdown */
+.dropdown {
+  display: none;
+  background: gray;
+  position: absolute;
+}
+
+.show {
+  display: block;
+}
+
+/* Simple responsiveness */
+@media(max-width:600px) {
+  .nav a {
+    display: block;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="nav">
+  <a href="#">Home</a>
+  <a href="#" onclick="toggle()">Menu ▼</a>
+
+  <div id="drop" class="dropdown">
+    <a href="#">Option 1</a><br>
+    <a href="#">Option 2</a>
+  </div>
+</div>
+
+<script>
+function toggle() {
+  document.getElementById("drop").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Drag and Drop List</h3>
+
+<ul id="list">
+  <li draggable="true" ondragstart="drag(event)">Item 1</li>
+  <li draggable="true" ondragstart="drag(event)">Item 2</li>
+  <li draggable="true" ondragstart="drag(event)">Item 3</li>
+</ul>
+
+<script>
+var dragged;
+
+function drag(e) {
+  dragged = e.target;
+}
+
+document.getElementById("list").addEventListener("dragover", function(e) {
+  e.preventDefault();
+});
+
+document.getElementById("list").addEventListener("drop", function(e) {
+  e.preventDefault();
+  if (e.target.tagName === "LI") {
+    this.insertBefore(dragged, e.target.nextSibling);
+  }
+});
+</script>
+
+</body>
+</html>

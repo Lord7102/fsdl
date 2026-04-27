@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>To-Do List</h3>
+
+<input id="a" placeholder="Enter task">
+
+<button onclick="f()">Add</button>
+
+<div id="out"></div>
+
+<script>
+function f() {
+  let x = document.getElementById("a").value;
+  let out = document.getElementById("out");
+
+  // create task
+  let p = document.createElement("p");
+  p.innerText = x;
+
+  // delete button
+  let btn = document.createElement("button");
+  btn.innerText = "Delete";
+
+  btn.onclick = function() {
+    p.remove();
+  };
+
+  // attach button to task
+  p.appendChild(btn);
+
+  // show task
+  out.appendChild(p);
+}
+</script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>To-Do List</h3>
+
+<input type="text" id="task" placeholder="Enter task">
+<button onclick="add()">Add</button>
+
+<ul id="list"></ul>
+
+<script>
+function add() {
+  var t = document.getElementById("task").value;
+
+  if (t === "") return;
+
+  var li = "<li>" + t + 
+           " <button onclick='this.parentElement.remove()'>X</button></li>";
+
+  document.getElementById("list").innerHTML += li;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Simple Quiz</h3>
+
+<form id="quizForm">
+
+<p>1. Capital of India?</p>
+<input type="radio" name="q1" value="Delhi"> Delhi<br>
+<input type="radio" name="q1" value="Mumbai"> Mumbai<br>
+
+<p>2. 2 + 2 = ?</p>
+<input type="radio" name="q2" value="3"> 3<br>
+<input type="radio" name="q2" value="4"> 4<br>
+
+<p>3. Sun rises from?</p>
+<input type="radio" name="q3" value="East"> East<br>
+<input type="radio" name="q3" value="West"> West<br>
+
+<br>
+<button type="button" onclick="submitQuiz()">Submit</button>
+
+</form>
+
+<h3>Score: <span id="result"></span></h3>
+
+<script>
+function submitQuiz() {
+    let score = 0;
+
+    let q1 = document.querySelector('input[name="q1"]:checked');
+    let q2 = document.querySelector('input[name="q2"]:checked');
+    let q3 = document.querySelector('input[name="q3"]:checked');
+
+    if (q1 && q1.value === "Delhi") score++;
+    if (q2 && q2.value === "4") score++;
+    if (q3 && q3.value === "East") score++;
+
+    document.getElementById("result").innerText = score + "/3";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body{
+            width:300px;
+            margin:auto;
+            padding:10px;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weather Dashboard</h1>
+    <canvas id="line"></canvas>
+    <canvas id="bar"></canvas>
+    <canvas id="pie"></canvas>
+
+    <script>
+        let days = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+        let temp = [30,32,31,29,33,34,35];
+
+        new Chart(document.getElementById('line'),{
+            type:'line',
+            data:{
+                labels:days,
+                datasets:[{
+                    label:'Temperature',
+                    data:temp
+                }]
+            }
+        });
+        new Chart(document.getElementById('bar'),{
+            type:'bar',
+            data:{
+                labels:days,
+                datasets:[{
+                    label:'Temperature',
+                    data:temp
+                }]
+            }
+        });
+        new Chart(document.getElementById('pie'),{
+            type:'pie',
+            data:{
+                labels:['Sunny','Cloudy','Rainy','Stormy'],
+                datasets:[{
+                    data:[2,3,1,2]
+                }]
+            }
+        })
+    </script>
+</body>
+</html>

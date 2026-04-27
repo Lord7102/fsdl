@@ -1,0 +1,26 @@
+<html>
+<body>
+
+<h3 id="basic">Basic: ₹100 / Month</h3>
+<h3 id="pro">Pro: ₹200 / Month</h3>
+
+<button onclick="toggle()">Switch Plan</button>
+
+<script>
+var monthly = true;
+
+function toggle() {
+  if (monthly) {
+    document.getElementById("basic").innerText = "Basic: ₹1000 / Year";
+    document.getElementById("pro").innerText = "Pro: ₹2000 / Year";
+    monthly = false;
+  } else {
+    document.getElementById("basic").innerText = "Basic: ₹100 / Month";
+    document.getElementById("pro").innerText = "Pro: ₹200 / Month";
+    monthly = true;
+  }
+}
+</script>
+
+</body>
+</html>

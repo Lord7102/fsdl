@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+img {
+  width: 150px;
+  margin: 10px;
+  transition: 0.3s;
+}
+
+img:hover {
+  transform: scale(1.2);
+}
+</style>
+</head>
+
+<body>
+
+<h3>Image Gallery</h3>
+
+<select onchange="filter()" id="cat">
+  <option value="all">All</option>
+  <option value="nature">Nature</option>
+  <option value="tech">Tech</option>
+</select>
+
+<br><br>
+
+<img src="image.jpg" class="item" data-cat="nature">
+<img src="image.jpg" class="item" data-cat="nature">
+<img src="image.jpg" class="item" data-cat="nature">
+
+<img src="image.jpg" class="item" data-cat="tech">
+<img src="image.jpg" class="item" data-cat="tech">
+<img src="image.jpg" class="item" data-cat="tech">
+
+<script>
+function filter() {
+  var c = document.getElementById("cat").value;
+  var items = document.getElementsByClassName("item");
+
+  for (var i = 0; i < items.length; i++) {
+    if (c === "all" || items[i].dataset.cat === c) {
+      items[i].style.display = "inline";
+    } else {
+      items[i].style.display = "none";
+    }
+  }
+}
+</script>
+
+</body>
+</html>
